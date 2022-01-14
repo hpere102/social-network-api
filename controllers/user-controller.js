@@ -2,7 +2,7 @@ const { User } = require('../models');
 
 const UserController = {
     // get all Users
-    getAllUser(req, res) {
+    getAllUsers(req, res) {
       User.find({})
       .populate({
         path: 'thoughts',
