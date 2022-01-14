@@ -38,15 +38,15 @@ const thoughtController = {
   },
 
   
-removeReaction({ params }, res) {
-  Thought.findOneAndUpdate(
-    { _id: params.thoughtId },
-    { $pull: { reactions: { reactionId: params.reactionId } } },
-    { new: true }
-  )
-    .then(dbUserData => res.json(dbUserData))
-    .catch(err => res.json(err));
-},
+  removeReaction({ params }, res) {
+    Thought.findOneAndUpdate(
+      { _id: params.thoughtId },
+      { $pull: { reactions: { reactionsId: params.reactionsId } } },
+      { new: true }
+    )
+      .then(dbUserData => res.json(dbUserData))
+      .catch(err => res.json(err));
+  },
 
 
   removeThought({ params }, res) {
